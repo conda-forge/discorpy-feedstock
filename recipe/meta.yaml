@@ -1,13 +1,13 @@
 {% set name = "discorpy" %}
-{% set version = "1.4" %}
+{% set version = "1.5" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/DiamondLightSource/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4144dcad781312c8b2316d785c9e8110715b2fbc7f15180e1760b9191f0eb9c7
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/discorpy-{{ version }}.tar.gz
+  sha256: ead9b7ae14b02cb133a6449116562d20433d60e05691cfa46bbbd4cafa16579b
 build:  
   number: 0
   noarch: python
@@ -38,7 +38,8 @@ about:
   home: https://github.com/DiamondLightSource/discorpy
   license:  Apache-2.0
   license_file: LICENSE
-  summary: 'Distortion correction with high-accuracy for lens-coupled detector systems: https://discorpy.readthedocs.io'
+  summary: 'Distortion correction with high-accuracy for lens-coupled detector systems'
+  doc_url: https://discorpy.readthedocs.io  
 
 extra:
   recipe-maintainers:
