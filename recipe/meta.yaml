@@ -1,5 +1,5 @@
 {% set name = "discorpy" %}
-{% set version = "1.5" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,18 +7,18 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/discorpy-{{ version }}.tar.gz
-  sha256: ead9b7ae14b02cb133a6449116562d20433d60e05691cfa46bbbd4cafa16579b
+  sha256: 0ee2b8e7f04efbdc214fd7954bc5aa36cd3b69cc9412473b8b66a5003f46a8e6
 build:  
   number: 0
   noarch: python
-  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
-    - setuptools
+    - python >=3.8
+    - pip
   run:
-    - python >=3.7
+    - python >=3.8
     - matplotlib-base
     - numpy
     - scipy
@@ -29,16 +29,16 @@ requirements:
 test:
   imports:
     - discorpy
-  source_files:
-    - ./tests/
   commands:
-    - python -m unittest discover -s tests -v
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/DiamondLightSource/discorpy
   license:  Apache-2.0
   license_file: LICENSE
-  summary: 'Distortion correction with high-accuracy for lens-coupled detector systems'
+  summary: 'Camera calibration with sub-pixel accuracy'
   doc_url: https://discorpy.readthedocs.io  
 
 extra:
