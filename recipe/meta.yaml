@@ -16,7 +16,7 @@ build:
 requirements:
   host:
     - python >=3.8
-    - setuptools
+    - pip
   run:
     - python >=3.8
     - matplotlib-base
@@ -29,10 +29,10 @@ requirements:
 test:
   imports:
     - discorpy
-  source_files:
-    - ./tests/
   commands:
-    - python -m unittest discover -s tests -v
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/DiamondLightSource/discorpy
