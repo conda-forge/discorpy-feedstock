@@ -42,6 +42,5 @@ about:
   doc_url: https://discorpy.readthedocs.io  
 
 extra:
-  recipe-maintainers:
-    - algotom
+  recipe-maintainers:    
     - nghia-vo
