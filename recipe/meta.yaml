@@ -8,7 +8,7 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/discorpy-{{ version }}.tar.gz
   sha256: 0ee2b8e7f04efbdc214fd7954bc5aa36cd3b69cc9412473b8b66a5003f46a8e6
-build:  
+build:
   number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
@@ -36,10 +36,10 @@ test:
 
 about:
   home: https://github.com/DiamondLightSource/discorpy
-  license:  Apache-2.0
+  license: Apache-2.0
   license_file: LICENSE
   summary: 'Camera calibration with sub-pixel accuracy'
-  doc_url: https://discorpy.readthedocs.io  
+  doc_url: https://discorpy.readthedocs.io
 
 extra:
   recipe-maintainers:    
